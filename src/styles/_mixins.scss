@@ -1,0 +1,44 @@
+@function spacing($multiplier: 1) {
+  @return #{$spacing * $multiplier};
+}
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == $mobile {
+    @media (max-width: #{$tablet - 1}) {
+      @content;
+    }
+  } 
+  @else if $breakpoint == $tablet {
+    @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1}) {
+      @content;
+    }
+  } @else if $breakpoint == $desktop {
+      @media (min-width: #{$desktop}) {
+        @content;
+      }
+  }
+}
+
+@mixin heading-2-bold($color: $black, $font-weight: 400) {
+  font-family: $heading;
+  color: $color;
+  font-size: $heading-2;
+  font-weight: $font-weight;
+}
+
+@mixin logo-copy($color: $black) {
+  font-family: $brand;
+  color: $color;
+  font-size: $logo-copy;
+  text-transform: $uppercase;
+}
+
+@mixin vertical-center() {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

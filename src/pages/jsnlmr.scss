@@ -1,0 +1,44 @@
+body {
+  width: 100%;
+  height: auto;
+  background-color: $black;
+  overflow: hidden;
+}
+
+  .jsn-lmr {
+    @include vertical-center;
+    height:100%;
+
+    &-header {
+      @include heading-2-bold($white);
+      margin-top: spacing(4);
+      text-align: center;
+
+      @include breakpoint($tablet) {
+        font-size: 1.5em;
+      }
+
+      @include breakpoint($desktop) {
+        font-size: 2em;
+      }
+    }
+
+    &-footer {
+      position: fixed;
+      bottom: spacing();
+      left: 50%;
+      transform: translateX(-50%);
+      color: $white;
+      font-size: .75em;
+
+      @include breakpoint($tablet) {
+        font-size: 1em
+      }
+
+      @include breakpoint($desktop) {
+        font-size: 1em;
+      }
+
+
+    }
+  }
